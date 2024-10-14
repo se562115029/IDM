@@ -94,7 +94,7 @@ const Expenses = () => {
           A visual representation of expenses over time.
         </p>
       </div>
-      {/** FILTERS */}
+      {/** FILTER */}
       <div className="flex flex-col md:flex-row justify-between gap-4">
         <div className="w-full md:w-1/3 bg-white shadow rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-4">
