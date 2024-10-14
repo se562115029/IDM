@@ -129,7 +129,7 @@ const Expenses = () => {
                 id="start-date"
                 name="start-date"
                 className={classNames.selectInput}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => setStartDate(e.target.value)}
               ></input>
             </div>
             {/** END DATE */}
@@ -142,7 +142,7 @@ const Expenses = () => {
                 id="end-date"
                 name="end-date"
                 className={classNames.selectInput}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => setEndDate(e.target.value)}
               ></input>
             </div>
           </div>
