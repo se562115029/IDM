@@ -1,51 +1,55 @@
-import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
+import { Request, Response } from "express";
+import prisma from "../shared/client";
 
-const prisma = new PrismaClient();
-
+/** Declare prismaClient */
+const prismaClient = prisma;
+// const prismaClient = new PrismaClient();
 export const getDashboardMetrics = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    const popularProducts = await prisma.products.findMany({
+    const popularProducts = await prismaClient.products.findMany({
       take: 15,
       orderBy: {
         stockQuantity: "desc",
       },
     });
 
-    const salesSummary = await prisma.salesSummary.findMany({
+    const salesSummary = await prismaClient.salesSummary.findMany({
       take: 15,
       orderBy: {
         date: "desc",
       },
     });
-    const purchaseSummary = await prisma.purchaseSummary.findMany({
+    const purchaseSummary = await prismaClient.purchaseSummary.findMany({
       take: 15,
       orderBy: {
         date: "desc",
       },
     });
-    const expenseSummary = await prisma.expenseSummary.findMany({
+    const expenseSummary = await prismaClient.expenseSummary.findMany({
       take: 15,
       orderBy: {
         date: "desc",
       },
     });
-    const expenseByCategorySummaryRaw = await prisma.expenseByCategory.findMany(
-      {
+    const expenseByCategorySummaryRaw =
+      await prismaClient.expenseByCategory.findMany({
         take: 15,
         orderBy: {
           date: "desc",
         },
-      }
-    );
+      });
 
     const expenseByCategorySummary = expenseByCategorySummaryRaw.map(
       (item: { amount: { toString: () => any } }) => ({
         ...item,
-        amount: item.amount.toString(),
+        amount:
+          typeof item.amount === "bigint"
+            ? item.amount.toString()
+            : item.amount,
       })
     );
 

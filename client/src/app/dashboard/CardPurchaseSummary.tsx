@@ -8,9 +8,6 @@ const CardPurchaseSummary = () => {
   const { data, isLoading } = useGetDashboardMetricsQuery();
   const purchaseData = data?.purchaseSummary || [];
 
-  console.log("🚀 ~ CardPurchaseSummary ~ data:", data);
-  console.log("🚀 ~ CardPurchaseSummary ~ purchaseData:", purchaseData);
-
   const lastDataPoint = purchaseData[purchaseData.length - 1] || [];
   return (
     <div

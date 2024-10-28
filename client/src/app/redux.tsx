@@ -60,11 +60,12 @@ const storage =
 
 const persistConfig = { key: "root", storage, whitelist: ["global"] };
 
+/** register state */
 const rootReducer = combineReducers({
   global: globalReducer,
   [api.reducerPath]: api.reducer,
 });
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 /** REDUX STORE */
 export const makeStore = () => {

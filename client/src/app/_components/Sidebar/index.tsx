@@ -32,7 +32,6 @@ const SidebarLink = ({
   const pathname = usePathname();
   const isActive =
     pathname === href || (pathname === "/" && href === "/dashboard");
-  console.log("collaped", isCollapsed, label);
   return (
     <Link href={href}>
       <div
@@ -78,8 +77,8 @@ const Sidebar = () => {
         }`}
       >
         <Image
-          src="https://s3-inventory-dashboard-management.s3.ap-southeast-2.amazonaws.com/logo.png"
-          alt="edstock-logo"
+          src="https://s3-inventory-dashboard-management.s3.ap-southeast-2.amazonaws.com/logo.svg"
+          alt="stock-logo"
           width={27}
           height={27}
           className="rounded-full w-8"
@@ -89,7 +88,7 @@ const Sidebar = () => {
             isSidebarCollapsed ? "hidden" : "block"
           } front-extrabold text-2xl`}
         >
-          EDSTOCK
+          PTASTOCK
         </h1>
 
         <button

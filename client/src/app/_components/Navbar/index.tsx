@@ -46,8 +46,8 @@ const Navbar = () => {
       <div className="flex justify-between items-center gap-5">
         <div className="hidden md:flex justify-between items-center gap-5">
           <div>
-            <button onClick={toggleDarkMode}>
-              {isDarkMode ? (
+            <button data-testid="change-mode" onClick={toggleDarkMode}>
+              {!isDarkMode ? (
                 <Sun className="cursor-pointer text-gray-500" size={24}></Sun>
               ) : (
                 <Moon className="cursor-pointer text-gray-500" size={24}></Moon>
@@ -66,10 +66,10 @@ const Navbar = () => {
               src="https://s3-inventory-dashboard-management.s3.ap-southeast-2.amazonaws.com/profile.jpg"
               alt="Profile"
               width={50}
-              height={50}
+              height={20}
               className="rounded-full h-full object-cover"
             />
-            <span className="font-semibold">Ed Roh</span>
+            <span className="font-semibold">Ellie Pta</span>
           </div>
         </div>
         <Link href="/setting">
