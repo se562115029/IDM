@@ -10,6 +10,7 @@ import {
   User,
   Clipboard,
   CircleDollarSign,
+  Sheet,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -136,6 +137,13 @@ const Sidebar = () => {
           href="/expenses"
           icon={CircleDollarSign}
           label="Expenses"
+          isCollapsed={isSidebarCollapsed}
+        />
+
+        <SidebarLink
+          href="/product-sheet"
+          icon={Sheet}
+          label="Product sheet"
           isCollapsed={isSidebarCollapsed}
         />
       </div>
