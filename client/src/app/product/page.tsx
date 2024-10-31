@@ -80,7 +80,7 @@ const Products = () => {
             >
               <div className="flex flex-col items-center">
                 <Image
-                  src={`https://s3-inventory-dashboard-management.s3.ap-southeast-2.amazonaws.com/product${
+                  src={`${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_URL}product${
                     Math.floor(Math.random() * 3) + 1
                   }.png`}
                   alt={product.name}

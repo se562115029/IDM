@@ -63,7 +63,7 @@ const Navbar = () => {
           <hr className="w-0 h-7 border border-solid border-gray-300 mx-3"></hr>
           <div className="flex items-center gap-3 cursor-pointer">
             <Image
-              src="https://s3-inventory-dashboard-management.s3.ap-southeast-2.amazonaws.com/profile.jpg"
+              src={`${process.env.NEXT_PUBLIC_AWS_S3_BUCKET_URL}profile.jpg`}
               alt="Profile"
               width={50}
               height={20}
